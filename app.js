@@ -15,7 +15,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Define the route for the homepage
 app.get('/', (req, res) => {
-    res.render('borderkiu');
+    res.render('borderkiu'); // Renders the "borderkiu.ejs" file
+});
+
+// Route for social.ejs
+app.get('/social', (req, res) => {
+    res.render('social'); // Renders the "social.ejs" file
 });
 
 // Start the server

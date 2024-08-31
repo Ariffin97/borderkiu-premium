@@ -1,102 +1,455 @@
-body {
-    font-family: Arial, sans-serif;
+/* =============================
+   General Body Styles 
+   ============================= */
+   body {
+    font-family: 'Poppins', sans-serif; /* Updated font for a modern look */
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    padding: 10;
+    background-color: #ffd900;
+    background-image: url('path-to-subtle-pattern.png'); /* Add a subtle pattern */
+    background-size: cover;
+    color: #333; /* Darker text color for better readability */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
 }
 
+/* =============================
+   Header Section Styles 
+   ============================= */
 header {
-    background-color: #333;
+    background: linear-gradient(90deg, rgba(252, 227, 0, 0.8), rgba(0, 78, 146, 0.8)), url('your-background-image.jpg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
-    padding: 2em 0;
+    padding: 7em 0em; /* Increased padding for a more spacious feel */
+    padding-bottom: 1em;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: fadeInHeader 1.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
+/* Keyframe Animation for Header Fade-in */
+@keyframes fadeInHeader {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-header p {
+.header-content {
+    flex: 1;
+    padding-right: 0em;
+    animation: slideInLeft 1.5s ease-in-out;
+}
+
+/* Image Styles within Header */
+.header-image img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    animation: slideInRight 1.5s ease-in-out;
+}
+
+/* Keyframe Animations for Slide In */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Highlighted Text in Header */
+.highlight {
+    color: #ffd700;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+/* Keyframe Animation for Pulse Effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Button Styles in Header */
+.btn-header {
+    background: linear-gradient(45deg, #ff5722, #e64a19); /* Gradient for buttons */
+    color: #fff;
+    border: none;
+    border-radius: 50px; /* Rounded buttons for a more modern look */
+    padding: 12px 24px;
+    cursor: pointer;
+    margin-top: 5px;
     font-size: 1.2em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: bounceIn 2s ease;
 }
 
+/* Hover Effect for Header Button */
+.btn-header:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframe Animation for Bounce In */
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* =============================
+   Navigation Section Styles 
+   ============================= */
 nav {
-    background-color: #444;
-    padding: 1em;
-    text-align: center;
+    background-color: rgba(0, 4, 40, 0.9); /* Slightly transparent background */
+    backdrop-filter: blur(10px); /* Adding a slight blur for a glassy effect */
+    padding: 0.1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    transition: background-color 0.3s ease;
 }
 
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo Styles within Navbar */
+.navbar-logo img {
+    height: 90px; /* Adjust the height to fit your design */
+    max-width: 100%;
+}
+
+.navbar-toggler {
+    display: none;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Navbar Menu Styles */
 nav ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 5;
+    text-align: center;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 1em;
+    margin: 0 1.5em;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.2em;
+    padding: 0.5em;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-section {
-    margin: 2em;
-    padding: 2em;
+/* Underline Animation for Navbar Links */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ffd700;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* =============================
+   Media Queries for Responsive Design 
+   ============================= */
+
+/* Media query for mobile view (max-width: 768px) */
+@media (max-width: 768px) {
+    .navbar-toggler {
+        display: block;
+        padding: 0.6em;
+    }
+
+    nav ul {
+        display: none;  /* Ensure it's hidden by default on small screens */
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+        background-color: #000428;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    nav ul.show {
+        display: flex;  /* Show when toggled */
+    }
+
+    nav ul li {
+        margin: 1em 0;
+    }
+
+    .navbar-logo img {
+        height: 90px; /* Adjust height for smaller screens */
+    }
+}
+
+/* =============================
+   Main Content Section Styles 
+   ============================= */
+main {
+    padding: 2em 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Flexbox Container for Content Sections */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.5em;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* =============================
+   Card Styles for Sections 
+   ============================= */
+.card {
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    padding: 20px;
+    margin: 15px 0;
+    text-align: center;
+    width: 300px;
+    animation: fadeInUp 0.8s ease-in-out; /* Subtle slide-in animation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-section h2 {
+/* Keyframe Animation for Card Fade-in */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
     margin-top: 0;
-    font-size: 2em;
+    color: #333;
+    font-size: 1.2em;
 }
 
-.module-content {
-    margin-top: 1em;
-}
-
-button.predict-btn {
-    padding: 0.5em 1em;
-    background-color: #0066cc;
+/* =============================
+   General Button Styles 
+   ============================= */
+.btn-primary {
+    background: linear-gradient(45deg, #0066cc, #004c99);
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 50px; /* Rounded buttons for a more modern look */
+    padding: 12px 24px;
     cursor: pointer;
+    margin-top: 15px;
+    font-size: 1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect for Primary Button */
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Click Animation for Primary Button */
+.btn-primary:active {
+    transform: scale(0.95);
+}
+
+/* =============================
+   Footer Section Styles 
+   ============================= */
+footer {
+    background-color: #004e92;
+    color: #fff;
+    text-align: center;
+    padding: 2em 0;
+    position: relative;
+    margin-top: 3em;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
     font-size: 1em;
 }
 
-button.predict-btn:hover {
-    background-color: #004c99;
-}
-
-.animated-result,
-.animated-weather,
-.animated-chart {
-    margin-top: 1em;
-    padding: 1em;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    animation: fadeIn 2s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-footer {
-    background-color: #333;
+/* Footer Social Icons */
+.footer-icons a {
     color: #fff;
-    text-align: center;
-    padding: 1em 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    margin: 0 10px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+    color: #ffd700;
+}
+
+/* =============================
+   Additional Media Queries 
+   ============================= */
+
+/* Media query for small devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+        background-color: #000428;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .flex-container {
+        gap: 1em;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    button.btn-primary {
+        padding: 0.5em 1em;
+        font-size: 0.9em;
+    }
+}
+
+/* Media query for extra small devices (max-width: 480px) */
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 1em;
+    }
+
+    section {
+        padding: 1em;
+    }
+
+    section h3 {
+        font-size: 1.4em;
+    }
+
+    button.btn-primary {
+        font-size: 0.9em;
+    }
+
+    .flex-container {
+        gap: 0.75em;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .card {
+        max-width: 250px;
+    }
 }

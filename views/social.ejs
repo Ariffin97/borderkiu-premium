@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Social Site</title>
+    <link rel="stylesheet" href="/styles/social.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>MySocial</h1>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Reels</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Profile Picture Section -->
+        <section id="profile-section">
+            <div class="profile-pic-container">
+                <img src="/images/profile.webp" alt="Profile Picture" class="profile-pic">
+                <button class="edit-pic-btn">Change Picture</button>
+            </div>
+            <h2>User Name</h2>
+        </section>
+
+        <!-- Post/Status Upload Section -->
+        <section id="upload-section">
+            <textarea placeholder="What's on your mind?" class="status-input"></textarea>
+            <div class="upload-buttons">
+                <label for="image-upload" class="upload-btn">Choose File</label>
+                <input type="file" id="image-upload" class="hidden-file-input" accept="image/*">
+                <button class="post-btn">Post Status</button>
+            </div>
+            <div id="image-preview-container">
+                <img id="image-preview" src="" alt="Image Preview" style="display: none;">
+            </div>
+        </section>
+        
+        
+        <!-- Wall Section for Viewing Statuses -->
+        <section id="wall-section">
+            <h3>Latest Posts</h3>
+            <div class="post-wall">
+                <!-- Example of a status post -->
+                <div class="post">
+                    <div class="post-header">
+                        <img src="/images/profile.webp" alt="User Profile" class="post-profile-pic">
+                        <h4>User Name</h4>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                    <p class="post-content">Just had a great day at the park!</p>
+                    <small class="post-time">2 hours ago</small>
+                </div>
+                <!-- Additional posts will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <!-- Friends Section -->
+        <section id="friends-section">
+            <h3>Friends</h3>
+            <div class="friends-list">
+                <!-- Friends will be listed here -->
+            </div>
+            <button class="add-friend-btn">Add Friend</button>
+        </section>
+
+        <!-- Chat Section -->
+        <section id="chat-section">
+            <h3>Chat</h3>
+            <div class="chat-container">
+                <!-- Chat messages will appear here -->
+            </div>
+            <input type="text" class="chat-input" placeholder="Type a message...">
+            <button class="send-btn">Send</button>
+        </section>
+
+        <!-- Reels Section -->
+        <section id="reels-section">
+            <h3>Reels</h3>
+            <div class="reels-container">
+                <!-- Reel videos will be displayed here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MySocial</p>
+    </footer>
+
+    <script src="/scripts/social.js"></script>
+</body>
+</html>

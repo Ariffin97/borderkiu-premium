@@ -1,0 +1,320 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header and Navigation Styles */
+header {
+    background-color: #0066cc;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Main Content Area Styles */
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Profile Section Styles */
+.profile-pic-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Makes the image round */
+    border: 3px solid #0066cc;
+    object-fit: cover; /* Ensures the image scales correctly within the circle */
+    transition: transform 0.3s;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+.edit-pic-btn {
+    display: block;
+    margin: 10px auto;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.edit-pic-btn:hover {
+    background-color: #ffcc00;
+}
+
+/* Post/Status Upload Section Styles */
+.status-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #0066cc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Container for Upload Buttons */
+/* Hide the original file input */
+.hidden-file-input {
+    display: none;
+}
+
+/* Button Styles (including the custom file input trigger) */
+/* Button Styles */
+/* Hide the original file input */
+.hidden-file-input {
+    display: none;
+}
+
+/* Button Styles */
+.upload-btn, .post-btn {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    text-align: center;
+    font-size: 14px; /* Ensure both buttons have the same font size */
+    width: 150px; /* Set a fixed width to make both buttons the same size */
+    display: inline-block;
+}
+
+.upload-btn:hover, .post-btn:hover {
+    background-color: #ffcc00;
+}
+
+/* Image Preview Styles */
+#image-preview-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px; /* Adjust as needed */
+}
+
+#image-preview {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    display: none; /* Ensure it's hidden by default */
+}
+
+
+
+/* Wall Section Styles */
+#wall-section {
+    margin-top: 30px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.post-wall {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Post Header Styles */
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.post-profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.delete-btn {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+}
+
+.post-content {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.post-time {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Friends Section Styles */
+#friends-section {
+    margin-top: 30px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.friends-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.add-friend-btn {
+    display: block;
+    margin: 20px auto;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.add-friend-btn:hover {
+    background-color: #ffcc00;
+}
+
+/* Chat Section Styles */
+#chat-section {
+    margin-top: 30px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.chat-container {
+    height: 200px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chat-input {
+    width: calc(100% - 60px);
+    padding: 10px;
+    border: 2px solid #0066cc;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.send-btn {
+    padding: 10px 20px;
+    background-color: #00cc55;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.send-btn:hover {
+    background-color: #ffcc00;
+}
+
+/* Reels Section Styles */
+#reels-section {
+    margin-top: 30px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.reels-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    background-color: #0066cc;
+    color: white;
+    padding: 10px 0;
+    margin-top: 30px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .status-input, .chat-input {
+        width: 100%;
+    }
+    
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
